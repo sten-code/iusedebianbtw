@@ -8,6 +8,13 @@ function install_discord()
   rm discord.deb
 }
 
+function install_zsh()
+{
+  sudo apt install zsh zsh-autosuggestions zsh-syntax-highlighting
+  sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+
+}
+
 function install_firefox()
 {
   sudo apt install -y curl tar
@@ -76,6 +83,7 @@ Dolphin
 +GitHub
 +Pavu Control
 +Pulse Audio
++zsh
 +Firefox
 +JetBrains Mono Nerd Font
 +Neovim
@@ -94,6 +102,7 @@ Dolphin
 GitHub
 Pavu Control
 Pulse Audio
+zsh
 Firefox
 JetBrains Mono Nerd Font
 Neovim
@@ -112,6 +121,7 @@ for index in "${index_array[@]}"; do
     "GitHub")                   sudo apt install -y gh;;
     "Pavu Control")             sudo apt install -y pavucontrol;;
     "Pulse Audio")              sudo apt install -y pulseaudio;;
+    "zsh")                      install_zsh;;
     "Firefox")                  install_firefox;;
     "JetBrains Mono Nerd Font") install_jetbrainsmononerdfont;;
     "Neovim")                   install_neovim;;
