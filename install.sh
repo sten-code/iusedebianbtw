@@ -38,6 +38,14 @@ function install_premake5() {
   rm -rf premake5
 }
 
+function install_vscode()
+{
+  sudo apt install -y wget 
+  wget "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -O vscode.deb
+  sudo apt install -y ./vscode.deb
+  rm vscode.deb
+}
+
 function install_vmware()
 {
   sudo apt install -y wget linux-headers-$(uname -r)
@@ -176,6 +184,7 @@ for index in "${index_array[@]}"; do
     "Whatsapp")                 install_whatsapp;;
     "premake5")                 install_premake5;;
     "vlc")                      sudo apt install -y vlc;;
+    "vscode")                   install_vscode;;
     "VMWare Workstation Pro")   install_vmware;;
     "GitHub")                   sudo apt install -y gh;;
     "Pavu Control")             sudo apt install -y pavucontrol;;
