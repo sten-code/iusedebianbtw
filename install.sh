@@ -21,7 +21,7 @@ function install_firefox()
 function install_jetbrainsmononerdfont()
 {
   sudo apt install -y wget unzip
-  mkdir ~/.fonts
+  mkdir -p ~/.fonts
   wget "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip" -o ~/.fonts/JetBrainsMono.zip
   cd ~/.fonts
   unzip JetBrainsMono.zip -o
@@ -32,7 +32,7 @@ function install_neovim()
 {
   sudo apt install -y curl tar make gcc cmake gettext unzip
   version="0.9.4"
-  curl "https://github.com/neovim/neovim/archive/refs/tags/v$version.tar.gz" -o neovim.tar.gz
+  wget "https://github.com/neovim/neovim/archive/refs/tags/v$version.tar.gz" -o neovim.tar.gz
   tar -xf neovim.tar.gz
   cd neovim-$version
   sudo make CMAKE_BUILD_TYPE=RelWithDebInfo
@@ -66,7 +66,7 @@ function install_chadwm()
   
   echo "startx ~/.config/chadwm/scripts/run.sh" >> ~/.profile
   
-  mkdir ~/.wallpapers
+  mkdir -p ~/.wallpapers
   curl "https://raw.githubusercontent.com/sten-code/iusedebianbtw/master/wallpaper.png" -o ~/.wallpapers/wallpaper.png
 }
 
