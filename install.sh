@@ -14,6 +14,7 @@ function install_zsh()
   sh -c "$(wget https://raw.githubusercontent.com/sten-code/iusedebianbtw/main/zsh.sh -O -)"
   rm ~/.zshrc
   wget https://raw.githubusercontent.com/sten-code/iusedebianbtw/main/.zshrc -O ~/.zshrc
+  chsh -s $(which zsh)
 }
 
 function install_firefox()
