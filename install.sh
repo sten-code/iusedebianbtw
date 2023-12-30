@@ -139,6 +139,7 @@ Whatsapp
 premake5
 vlc
 ytop
+wpagui
 VMWare Workstation Pro
 +GitHub
 +Pavu Control
@@ -164,6 +165,7 @@ Whatsapp
 premake5
 vlc
 ytop
+wpagui
 VMWare Workstation Pro
 GitHub
 Pavu Control
@@ -190,6 +192,7 @@ for index in "${index_array[@]}"; do
     "premake5")                 install_premake5;;
     "vlc")                      sudo apt install -y vlc;;
     "ytop")                     install_ytop;;
+    "wpagui")                   sudo apt install -y wpagui;;
     "vscode")                   install_vscode;;
     "VMWare Workstation Pro")   install_vmware;;
     "GitHub")                   sudo apt install -y gh;;
