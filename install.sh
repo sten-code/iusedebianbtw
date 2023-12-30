@@ -22,7 +22,7 @@ function install_steam()
 function install_whatsapp()
 {
   sudo apt install -y wget
-  wget "https://github.com/eneshecan/whatsapp-for-linux/releases/download/v1.6.4/whatsapp-for-linux_1.6.4_amd64.deb" -O whatsap.deb
+  wget "https://github.com/eneshecan/whatsapp-for-linux/releases/download/v1.6.4/whatsapp-for-linux_1.6.4_amd64.deb" -O whatsapp.deb
   sudo apt install -y ./whatsapp.deb
   rm whatsapp.deb
 }
