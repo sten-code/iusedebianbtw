@@ -181,6 +181,20 @@ chadwm"
 IFS=$' ' read -ra index_array <<< $(echo "$checkbox_output")
 mapfile -t item_array <<< "$options"
 
+echo "Selected Packages:"
+echo "--------------------------------------------------"
+for index in "${index_array[@]}"; do
+  echo "${item_array[$index]}"
+done
+echo "--------------------------------------------------"
+echo "Are you sure you want to install these packages? [Y/n]"
+read -r opt
+case $opt in
+  y*|Y*|"") ;;
+  n*|N*) exit ;;
+  *) echo "Invalid choice."; exit ;;
+esac
+
 for index in "${index_array[@]}"; do
   echo "Installing ${item_array[$index]}"
   case "${item_array[$index]}" in
