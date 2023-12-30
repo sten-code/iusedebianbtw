@@ -4,7 +4,7 @@ function install_discord()
 {
   sudo apt install -y curl
   curl -L "https://discord.com/api/download?platform=linux&format=deb" -o discord.deb
-  sudo apt install ./discord.deb
+  sudo apt install -y ./discord.deb
   rm discord.deb
 }
 
