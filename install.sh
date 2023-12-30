@@ -80,6 +80,7 @@ Dolphin
 +Suckless Terminal
 +chadwm"
 
+apt install curl
 curl https://raw.githubusercontent.com/sten-code/iusedebianbtw/main/checkbox.sh -o checkbox.sh
 source checkbox.sh --multiple --index --options="$checkbox_options"
 rm checkbox.sh
