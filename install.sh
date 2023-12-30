@@ -34,11 +34,12 @@ function install_neovim()
   version="0.9.4"
   wget "https://github.com/neovim/neovim/archive/refs/tags/v$version.tar.gz" -O neovim.tar.gz
   tar -xf neovim.tar.gz
+  rm neovim.tar.gz
   cd neovim-$version
   sudo make CMAKE_BUILD_TYPE=RelWithDebInfo
   sudo make install
   cd -
-  rm -rf neovim-$version
+  sudo rm -rf neovim-$version
 }
 
 function install_nvchad()
