@@ -10,9 +10,10 @@ function install_discord()
 
 function install_zsh()
 {
-  sudo apt install zsh zsh-autosuggestions zsh-syntax-highlighting
-  sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-
+  sudo apt install -y wget zsh zsh-autosuggestions zsh-syntax-highlighting
+  sh -c "$(wget https://raw.githubusercontent.com/sten-code/iusedebianbtw/main/zsh.sh -O -)"
+  rm ~/.zshrc
+  wget https://raw.githubusercontent.com/sten-code/iusedebianbtw/main/.zshrc -O ~/.zshrc
 }
 
 function install_firefox()
@@ -75,7 +76,7 @@ function install_chadwm()
   echo "startx ~/.config/chadwm/scripts/run.sh" >> ~/.profile
   
   mkdir -p ~/.wallpapers
-  curl "https://raw.githubusercontent.com/sten-code/iusedebianbtw/master/wallpaper.png" -o ~/.wallpapers/wallpaper.png
+  curl "https://raw.githubusercontent.com/sten-code/iusedebianbtw/main/wallpaper.png" -o ~/.wallpapers/wallpaper.png
 }
 
 checkbox_options="Discord
