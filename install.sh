@@ -14,7 +14,10 @@ function install_zsh()
   sh -c "$(wget https://raw.githubusercontent.com/sten-code/iusedebianbtw/main/zsh.sh -O -)"
   rm ~/.zshrc
   wget https://raw.githubusercontent.com/sten-code/iusedebianbtw/main/.zshrc -O ~/.zshrc
-  chsh -s $(which zsh)
+  chsh -s $(which zsh)FILE=/etc/resolv.conf
+  echo "if test -f \"~/.config/chadwm/scripts/run.sh\"; then"   | sudo tee -a /etc/zsh/zprofile
+  echo "  startx ~/.config/chadwm/scripts/run.sh"               | sudo tee -a /etc/zsh/zprofile
+  echo "fi"                                                     | sudo tee -a /etc/zsh/profile
 }
 
 function install_firefox()

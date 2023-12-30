@@ -389,16 +389,6 @@ EOF
 
   echo "${FMT_BLUE}Time to change your default shell to zsh:${FMT_RESET}"
 
-  # Prompt for user choice on changing the default login shell
-  printf '%sDo you want to change your default shell to zsh? [Y/n]%s ' \
-    "$FMT_YELLOW" "$FMT_RESET"
-  read -r opt
-  case $opt in
-    y*|Y*|"") ;;
-    n*|N*) echo "Shell change skipped."; return ;;
-    *) echo "Invalid choice. Shell change skipped."; return ;;
-  esac
-
   # Check if we're running on Termux
   case "$PREFIX" in
     *com.termux*) termux=true; zsh=zsh ;;
