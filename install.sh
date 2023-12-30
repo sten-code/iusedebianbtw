@@ -65,10 +65,8 @@ function install_chadwm()
   echo "startx ~/.config/chadwm/scripts/run.sh" >> ~/.profile
   
   mkdir ~/.wallpapers
-  wget "https://media.discordapp.net/attachments/1021869089980956722/1190414865064534177" -o ~/.wallpapers/wallpaper.png
+  wget "https://raw.githubusercontent.com/sten-code/iusedebianbtw/master/wallpaper.png" -o ~/.wallpapers/wallpaper.png
 }
-
-git clone "https://github.com/pedro-hs/checkbox.sh" checkbox
 
 checkbox_options="Discord
 Dolphin
@@ -82,7 +80,9 @@ Dolphin
 +Suckless Terminal
 +chadwm"
 
-source checkbox/checkbox.sh --multiple --index --options="$checkbox_options"
+wget https://raw.githubusercontent.com/sten-code/iusedebianbtw/main/checkbox.sh -o checkbox.sh
+source checkbox.sh --multiple --index --options="$checkbox_options"
+rm checkbox.sh
 clear
 
 options="Discord
