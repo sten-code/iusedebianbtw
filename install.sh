@@ -22,7 +22,7 @@ function install_jetbrainsmononerdfont()
 {
   sudo apt install -y wget unzip
   mkdir -p ~/.fonts
-  wget "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip" -o ~/.fonts/JetBrainsMono.zip
+  wget "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip" -O ~/.fonts/JetBrainsMono.zip
   cd ~/.fonts
   unzip JetBrainsMono.zip -o
   cd -
@@ -32,7 +32,7 @@ function install_neovim()
 {
   sudo apt install -y curl tar make gcc cmake gettext unzip
   version="0.9.4"
-  wget "https://github.com/neovim/neovim/archive/refs/tags/v$version.tar.gz" -o neovim.tar.gz
+  wget "https://github.com/neovim/neovim/archive/refs/tags/v$version.tar.gz" -O neovim.tar.gz
   tar -xf neovim.tar.gz
   cd neovim-$version
   sudo make CMAKE_BUILD_TYPE=RelWithDebInfo
