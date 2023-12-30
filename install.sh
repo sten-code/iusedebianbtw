@@ -19,6 +19,35 @@ function install_steam()
   rm steam.deb
 }
 
+function install_whatsapp()
+{
+  sudo apt install -y wget
+  wget "https://github.com/eneshecan/whatsapp-for-linux/releases/download/v1.6.4/whatsapp-for-linux_1.6.4_amd64.deb" -O whatsap.deb
+  sudo apt install -y ./whatsapp.deb
+  rm whatsapp.deb
+}
+
+function install_premake5() {
+  sudo apt install -y wget tar
+  mkdir premake5
+  cd premake5
+  wget "https://github.com/premake/premake-core/releases/download/v5.0.0-beta2/premake-5.0.0-beta2-linux.tar.gz" -O premake5.tar.gz
+  tar -xf premake5.tar.gz
+  sudo mv premake5 /bin/premake5
+  cd -
+  rm -rf premake5
+}
+
+function install_vmware()
+{
+  sudo apt install -y wget linux-headers-$(uname -r)
+  wget "https://download3.vmware.com/software/WKST-1750-LX/VMware-Workstation-Full-17.5.0-22583795.x86_64.bundle" -O vmware.bundle
+  chmod +x vmware.bundle
+  sudo ./vmware.bundle
+  rm vmware.bundle
+  sudo vmware-modconfig --console --install-all
+}
+
 function install_zsh()
 {
   sudo apt install -y wget zsh zsh-autosuggestions zsh-syntax-highlighting
@@ -95,6 +124,10 @@ function install_chadwm()
 checkbox_options="Discord
 Dolphin
 Steam
+Whatsapp
+premake5
+vlc
+VMWare Workstation Pro
 +GitHub
 +Pavu Control
 +Pulse Audio
@@ -115,6 +148,10 @@ clear
 options="Discord
 Dolphin
 Steam
+Whatsapp
+premake5
+vlc
+VMWare Workstation Pro
 GitHub
 Pavu Control
 Pulse Audio
@@ -134,7 +171,12 @@ for index in "${index_array[@]}"; do
   case "${item_array[$index]}" in
     "Discord")                  install_discord;;
     "Dolphin")                  sudo apt install -y dolphin;;
+    "Nautilus")                 sudo apt install -y nautilus;;
     "Steam")                    install_steam;;
+    "Whatsapp")                 install_whatsapp;;
+    "premake5")                 install_premake5;;
+    "vlc")                      sudo apt install -y vlc;;
+    "VMWare Workstation Pro")   install_vmware;;
     "GitHub")                   sudo apt install -y gh;;
     "Pavu Control")             sudo apt install -y pavucontrol;;
     "Pulse Audio")              sudo apt install -y pulseaudio;;
