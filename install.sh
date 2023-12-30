@@ -20,10 +20,12 @@ function install_firefox()
 
 function install_jetbrainsmononerdfont()
 {
-  sudo apt install -y curl unzip
+  sudo apt install -y wget unzip
   mkdir ~/.fonts
-  curl "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip" -o ~/.fonts/JetBrainsMono.zip
-  unzip ~/.fonts/JetBrainsMono.zip
+  wget "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip" -o ~/.fonts/JetBrainsMono.zip
+  cd ~/.fonts
+  unzip JetBrainsMono.zip -o
+  cd -
 }
 
 function install_neovim()
