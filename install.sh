@@ -56,7 +56,7 @@ function install_st()
 
 function install_chadwm()
 {
-  apt install -y git make gcc picom rofi feh acpi libimlib2
+  apt install -y git make gcc picom rofi feh acpi libimlib2-dev libxinerama-dev
   git clone "https://github.com/sten-code/chadwm" --depth 1 ~/.config/chadwm
   cd ~/.config/chadwm/chadwm
   make install
