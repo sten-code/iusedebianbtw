@@ -10,8 +10,8 @@ function install_discord()
 
 function install_firefox()
 {
-  sudo apt install -y wget tar
-  wget -O firefox.tar.bz2 "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US"
+  sudo apt install -y curl tar
+  curl -o firefox.tar.bz2 "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US"
   tar xjf firefox.tar.bz2 -C /opt/
   ln -s /opt/firefox/firefox /usr/local/bin/firefox
   curl "https://raw.githubusercontent.com/mozilla/sumo-kb/main/install-firefox-linux/firefox.desktop" -P /usr/local/share/applications
@@ -20,7 +20,7 @@ function install_firefox()
 
 function install_jetbrainsmononerdfont()
 {
-  sudo apt install -y wget unzip
+  sudo apt install -y curl unzip
   mkdir ~/.fonts
   curl "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip" -o ~/.fonts/JetBrainsMono.zip
   unzip ~/.fonts/JetBrainsMono.zip
@@ -28,13 +28,13 @@ function install_jetbrainsmononerdfont()
 
 function install_neovim()
 {
-  sudo apt install -y wget tar make gcc cmake gettext unzip
+  sudo apt install -y curl tar make gcc cmake gettext unzip
   version="0.9.4"
   curl "https://github.com/neovim/neovim/archive/refs/tags/v$version.tar.gz" -o neovim.tar.gz
   tar -xf neovim.tar.gz
   cd neovim-$version
-  make CMAKE_BUILD_TYPE=RelWithDebInfo
-  make install
+  sudo make CMAKE_BUILD_TYPE=RelWithDebInfo
+  sudo make install
   cd -
   rm -rf neovim-$version
 }
@@ -56,7 +56,7 @@ function install_st()
 
 function install_chadwm()
 {
-  sudo apt install -y git make gcc picom rofi feh acpi libimlib2-dev libxinerama-dev
+  sudo apt install -y git make gcc picom rofi feh acpi libimlib2-dev libxinerama-dev xinit psmisc maim xclip
   git clone "https://github.com/sten-code/chadwm" --depth 1 ~/.config/chadwm
   cd ~/.config/chadwm/chadwm
   sudo make install
