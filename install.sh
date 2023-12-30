@@ -8,6 +8,17 @@ function install_discord()
   rm discord.deb
 }
 
+function install_steam()
+{
+  sudo dpkg --add-architecture i386
+  sudo apt update
+  sudo apt install -y libc6:i386 libgl1-mesa-dri:i386 libgl1:i386
+  sudo apt install -y wget
+  wget "https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb"
+  sudo apt install -y ./steam.deb
+  rm steam.deb
+}
+
 function install_zsh()
 {
   sudo apt install -y wget zsh zsh-autosuggestions zsh-syntax-highlighting
@@ -83,6 +94,7 @@ function install_chadwm()
 
 checkbox_options="Discord
 Dolphin
+Steam
 +GitHub
 +Pavu Control
 +Pulse Audio
@@ -102,6 +114,7 @@ clear
 
 options="Discord
 Dolphin
+Steam
 GitHub
 Pavu Control
 Pulse Audio
@@ -121,6 +134,7 @@ for index in "${index_array[@]}"; do
   case "${item_array[$index]}" in
     "Discord")                  install_discord;;
     "Dolphin")                  sudo apt install -y dolphin;;
+    "Steam")                    install_steam;;
     "GitHub")                   sudo apt install -y gh;;
     "Pavu Control")             sudo apt install -y pavucontrol;;
     "Pulse Audio")              sudo apt install -y pulseaudio;;
