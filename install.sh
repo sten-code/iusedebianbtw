@@ -117,5 +117,6 @@ for index in "${index_array[@]}"; do
     "chadwm")                   install_chadwm;;
     *) echo "No installation found for ${item_array[$index]}";;
   esac
+  echo "Installed ${item_array[$index]}"
 done
 
