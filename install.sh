@@ -178,6 +178,7 @@ premake5
 vlc
 ytop
 wpagui
+Visual Studio Code
 VMWare Workstation Pro
 +GitHub
 +Pavu Control
@@ -204,6 +205,7 @@ premake5
 vlc
 ytop
 wpagui
+Visual Studio Code
 VMWare Workstation Pro
 GitHub
 Pavu Control
@@ -245,7 +247,7 @@ for index in "${index_array[@]}"; do
     "vlc")                      sudo apt install -y vlc;;
     "ytop")                     install_ytop;;
     "wpagui")                   sudo apt install -y wpagui;;
-    "vscode")                   install_vscode;;
+    "Visual Studio Code")       install_vscode;;
     "VMWare Workstation Pro")   install_vmware;;
     "GitHub")                   sudo apt install -y gh;;
     "Pavu Control")             sudo apt install -y pavucontrol;;
