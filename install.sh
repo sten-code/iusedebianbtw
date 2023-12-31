@@ -172,6 +172,7 @@ install_chadwm()
 
 checkbox_options="Discord
 Dolphin
+Nautilus
 Steam
 Whatsapp
 premake5
@@ -199,6 +200,7 @@ clear
 
 options="Discord
 Dolphin
+Nautilus
 Steam
 Whatsapp
 premake5
