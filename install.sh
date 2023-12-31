@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function install_discord()
+install_discord()
 {
   # Download discord with redirects enabled
   curl -Lo discord.deb "https://discord.com/api/download?platform=linux&format=deb"
@@ -8,7 +8,7 @@ function install_discord()
   rm discord.deb
 }
 
-function install_steam()
+install_steam()
 {
   # Install some required 32-bit packages
   sudo dpkg --add-architecture i386
@@ -21,14 +21,14 @@ function install_steam()
   rm steam.deb
 }
 
-function install_whatsapp()
+install_whatsapp()
 {
   curl -Lo whatsapp.deb "https://github.com/eneshecan/whatsapp-for-linux/releases/download/v1.6.4/whatsapp-for-linux_1.6.4_amd64.deb"
   sudo apt install -y ./whatsapp.deb
   rm whatsapp.deb
 }
 
-function install_premake5() 
+install_premake5() 
 {
   curl -Lo premake5.tar.gz "https://github.com/premake/premake-core/releases/download/v5.0.0-beta2/premake-5.0.0-beta2-linux.tar.gz"
 
@@ -38,7 +38,7 @@ function install_premake5()
   rm premake5.tar.gz
 }
 
-function install_vscode()
+install_vscode()
 {
   # Download and install the latest deb file
   curl -Lo vscode.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" 
@@ -46,7 +46,7 @@ function install_vscode()
   rm vscode.deb
 }
 
-function install_vmware()
+install_vmware()
 {
   # Install the linux-headers for the correct linux kernel version
   sudo apt install -y linux-headers-$(uname -r)
@@ -61,13 +61,13 @@ function install_vmware()
   sudo vmware-modconfig --console --install-all
 }
 
-function install_ytop()
+install_ytop()
 {
   sudo apt install -y cargo
   cargo install ytop
 }
 
-function install_zsh()
+install_zsh()
 {
   # Installing zsh and some plugins
   sudo apt install -y zsh zsh-autosuggestions zsh-syntax-highlighting
@@ -86,19 +86,19 @@ function install_zsh()
   fi
 }
 
-function install_firefox()
+install_firefox()
 {
   # Installing the base package for firefox
   curl -Lo firefox.tar.bz2 "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US"
-  tar xjf firefox.tar.bz2 -C /opt/
-  ln -s /opt/firefox/firefox /usr/local/bin/firefox
+  sudo tar xjf firefox.tar.bz2 -C /opt/
+  sudo ln -s /opt/firefox/firefox /usr/local/bin/firefox
   rm firefox.tar.bz2 
 
   # Adding the shortcut for rofi
-  curl "https://raw.githubusercontent.com/mozilla/sumo-kb/main/install-firefox-linux/firefox.desktop" -P /usr/local/share/applications
+  sudo curl "https://raw.githubusercontent.com/mozilla/sumo-kb/main/install-firefox-linux/firefox.desktop" -o /usr/local/share/applications/firefox.desktop
 }
 
-function install_jetbrainsmononerdfont()
+install_jetbrainsmononerdfont()
 {
   # Create .fonts if it doesn't already exist
   mkdir -p ~/.fonts
@@ -106,11 +106,11 @@ function install_jetbrainsmononerdfont()
   # Download and extract it into the .fonts folder, making sure to enable overwrite while unzipping
   curl -Lo ~/.fonts/JetBrainsMono.zip "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip"
   cd ~/.fonts
-  unzip JetBrainsMono.zip -o
+  unzip -o JetBrainsMono.zip
   cd -
 }
 
-function install_neovim()
+install_neovim()
 {
   # The packages that are required for compiling neovim (unzip is also required but its already in the install command before everything runs)
   sudo apt install -y make gcc cmake gettext
@@ -133,12 +133,12 @@ function install_neovim()
   sudo rm -rf neovim-$version
 }
 
-function install_nvchad()
+install_nvchad()
 {
   git clone "https://github.com/NvChad/NvChad" ~/.config/nvim --depth 1
 }
 
-function install_st()
+install_st()
 {
   # The packages that are required for compiling st
   sudo apt install -y make gcc build-essential libxft-dev libharfbuzz-dev libgd-dev
@@ -149,7 +149,7 @@ function install_st()
   cd -
 }
 
-function install_chadwm()
+install_chadwm()
 {
   # The packages that are required for compiling and using chadwm
   sudo apt install -y make gcc picom rofi feh acpi libimlib2-dev libxinerama-dev xinit psmisc maim xclip x11-xserver-utils xbacklight
