@@ -16,7 +16,7 @@ install_steam()
   sudo apt install -y libc6:i386 libgl1-mesa-dri:i386 libgl1:i386
 
   # Download and install steam
-  curl -o steam.deb "https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb"
+  curl -Lo steam.deb "https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb"
   sudo apt install -y ./steam.deb
   rm steam.deb
 }
@@ -33,7 +33,7 @@ install_premake5()
   curl -Lo premake5.tar.gz "https://github.com/premake/premake-core/releases/download/v5.0.0-beta2/premake-5.0.0-beta2-linux.tar.gz"
 
   # Only extract premake5 from the tarball, which is directly extracted to the /bin folder
-  sudo tar -xf premake5.tar.gz -C /bin/premake5 premake5
+  sudo tar -xf premake5.tar.gz -C /bin/ ./premake5
 
   rm premake5.tar.gz
 }
